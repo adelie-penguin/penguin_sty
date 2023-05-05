@@ -305,7 +305,8 @@
 %	個人の好みに合わせた改造推奨
 %----------------------------------------------------------
 %	1枚だけ
-% 		\fig{タイトル}{ファイル名}{図の横幅}
+% 		\fig{タイトル}{epsファイル名}{図の横幅}
+% 		\dotfig{タイトル}{拡張子付ファイル名}{図の横幅}
 %
 %	2枚並べて
 % 		\doublefig{タイトル1}{ファイル名1}{図の横幅1}{図と図の間隔}{title_2}{file_name2}{size_2}
@@ -379,6 +380,18 @@
 \label{fig:#3#7}
 \end{figure}
 }
+
+%拡張子指定のない貼付(labelにも拡張子が必要)
+\newcommand{\dotfig}[3]{
+\begin{figure}[th]
+\centering
+\includegraphics[width=#3cm,clip]{./figure/#2}
+\caption{#1}
+\label{fig:#2}  
+\end{figure}
+}
+
+
 
 %表の簡単設定
 \newenvironment{ttable}[4]%
