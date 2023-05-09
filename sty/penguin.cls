@@ -6,18 +6,17 @@
 \LoadClass[a4j,twocolumn,twoside,fleqn]{jarticle}
 \typeout{>> ぺんぎん すたいるふぁいる ver.2023}
 
-%-----------------------------------------------------------
-\usepackage{geometry} % 余白楽々設定
+\usepackage{geometry}	% 余白楽々設定
 \usepackage{titlesec}	% sectoinデザイン変更
 \usepackage{fancyhdr}	% ヘッダーの設定
 \usepackage{lastpage}	% 最終ページ番号の表示
 \usepackage{url}    	% URLのアンダーバー表示(参考文献で利用)
-%\usepackage{layout}  % レイアウト表示 
-\usepackage{mathtools}% 数式用
+%\usepackage{layout}	% レイアウト表示 
+\usepackage{mathtools}	% 数式用
 \usepackage{graphicx}	% 画像ファイル用
 \usepackage{enumitem}	% 箇条書きのフォーマットを編集できる
-\usepackage{listings} %ソースコード貼付
-\usepackage{sty/jlisting} %listingsの(日本語拡張)
+\usepackage{listings}	%ソースコード貼付
+\usepackage{sty/jlisting} %listingsの日本語拡張
 \usepackage{multirow}	% 表のセル連結
 \usepackage{color}		% 文字に彩色
 \usepackage{ascmac}		% タイトル付き囲み線
@@ -333,58 +332,58 @@
 \end{figure}
 }
 
-\newcommand{\doublefig}[7]{
+\newcommand{\doublefig}[8][eps]{
 \begin{figure}[th]
 \begin{tabular}{lr}
 %-[1枚目]------------------
 \begin{minipage}[b]{0.45\hsize}
 \centering
-\includegraphics[width=#3cm,clip]{./figure/#2.eps}
-\caption{#1}
-\label{fig:#2}
+\includegraphics[width=#4cm,clip]{./figure/#3.#1}
+\caption{#2}
+\label{fig:#3}
 \end{minipage}
 %-[2枚目]------------------
-\hspace*{#4cm}
+\hspace*{#5cm}
 \begin{minipage}[b]{0.45\hsize}
 \centering
-\includegraphics[width=#7cm,clip]{./figure/#6.eps}	
-\caption{#5}
-\label{fig:#6}
+\includegraphics[width=#8cm,clip]{./figure/#7.#1}	
+\caption{#6}
+\label{fig:#7}
 \end{minipage}
 %--------------------------
 \end{tabular}
 \end{figure}
 }
 
-\newcommand{\subfig}[8]{
+\newcommand{\subfig}[9][eps]{
 \setcounter{c@subfigure}{0}
 \begin{figure}[th]
 \begin{tabular}{lr}
 %-[1枚目]------------------
 \begin{minipage}[b]{0.45\hsize}
 \centering
-\includegraphics[width=#4cm,clip]{./figure/#3.eps}
-\subcaption{#2}
+\includegraphics[width=#5cm,clip]{./figure/#4.#1}
+\subcaption{#3}
 \end{minipage}
 %-[2枚目]------------------
-\hspace*{#5cm}
+\hspace*{#6cm}
 \begin{minipage}[b]{0.45\hsize}
 \centering
-\includegraphics[width=#8cm,clip]{./figure/#7.eps}	
-\subcaption{#6}
+\includegraphics[width=#9cm,clip]{./figure/#8.#1}	
+\subcaption{#7}
 \end{minipage}
 %--------------------------
 \end{tabular}
 \vspace{-2em}
-\caption{#1}
-\label{fig:#3#7}
+\caption{#2}
+\label{fig:#4#8}
 \end{figure}
 }
 
 
 %表の簡単設定
-\newenvironment{ttable}[4]%
-	{\begin{table}[t]\caption{#1}\label{#2}\tbspace{#3}\begin{tabular}{#4}\hline\hline}%
+\newenvironment{ttable}[5][th]%
+	{\begin{table}[#1]\caption{#2}\label{#3}\tbspace{#5}\begin{tabular}{#4}\hline\hline}%
 	{\end{tabular}\end{table}}
 
 %----------------------------------------------------------
