@@ -383,7 +383,7 @@
 
 %表の簡単設定
 \newenvironment{ttable}[5][th]%
-	{\begin{table}[#1]\caption{#2}\label{#3}\tbspace{#5}\begin{tabular}{#4}\hline\hline}%
+	{\begin{table}[#1]\caption{#2}\label{tb:#3}\tbspace{#5}\begin{tabular}{#4}\hline\hline}%
 	{\end{tabular}\end{table}}
 
 %----------------------------------------------------------
