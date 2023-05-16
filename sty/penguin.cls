@@ -3,7 +3,7 @@
 %	  ぺんぎん すたいるふぁいる ver.2023 
 %***********************************************************
 
-\LoadClass[a4j,twocolumn,twoside,fleqn]{jarticle}
+\LoadClass[a4j,twocolumn,twoside]{jarticle}
 \typeout{>> ぺんぎん すたいるふぁいる ver.2023}
 
 \usepackage{geometry}	% 余白楽々設定
@@ -12,14 +12,14 @@
 \usepackage{lastpage}	% 最終ページ番号の表示
 \usepackage{url}    	% URLのアンダーバー表示(参考文献で利用)
 %\usepackage{layout}	% レイアウト表示 
-\usepackage{mathtools}	% 数式用
+\usepackage[fleqn]{mathtools}	% 数式用
 \usepackage{graphicx}	% 画像ファイル用
 \usepackage{enumitem}	% 箇条書きのフォーマットを編集できる
 \usepackage{listings}	%ソースコード貼付
 \usepackage{sty/jlisting} %listingsの日本語拡張
 \usepackage{multirow}	% 表のセル連結
-\usepackage{color}		% 文字に彩色
-\usepackage{ascmac}		% タイトル付き囲み線
+\usepackage{color}	% 文字に彩色
+\usepackage{ascmac}	% タイトル付き囲み線
 %-----------------------------------------------------------
 
 % オプションフラグの変数宣言
@@ -84,7 +84,7 @@
 \renewcommand{\tiny}{\@setfontsize\tiny{5pt}{6pt}}
 \renewcommand{\large}{\@setfontsize\large{10pt}{14pt}}
 \renewcommand{\Large}{\@setfontsize\Large{14pt}{16pt}}
-\fi
+
 
 \let\fs@caption\footnotesize
 \let\fs@subcaption\scriptsize
@@ -95,7 +95,7 @@
 \let\fs@title\Large
 \let\fs@author\normalsize
 \let\fs@section\large
-
+\fi
 
 
 %-----------------------------------------------------------
