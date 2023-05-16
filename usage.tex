@@ -122,7 +122,7 @@ $\setminus$figref${$tb:ラベル名$}$と記述してください．
 \begin{minilst}
 \begin{table}[t]
 \caption{静的配列の実行時間[ms]}
-\label{tb:1}
+\label{tb:example}
 \tbspace{0.3}	%セルの左右余白サイズ[cm]
 \begin{tabular}{l|r|r|r}
 \hline\hline
@@ -136,9 +136,9 @@ without avx & 4.8   & 4.1      & 2.5    \\\hline
 %}}}
 %{{{
 % テーブル環境(省略版)
-\begin{lstbox}{\tabref{tb:1}のテーブルを表示するコマンド(ttable環境利用)}
+\begin{lstbox}{\tabref{tb:example}のテーブルを表示するコマンド(ttable環境利用)}
 \begin{minilst}
-\begin{ttable}{静的配列の実行時間[ms]}{tb:1}{0.3}{l|r|r|r}
+\begin{ttable}{静的配列の実行時間[ms]}{example}{l|r|r|r}{0.3}
             & array & pointer  & scalar \\\hline
 with avx    & 4.0   & 3.2      & 2.5    \\
 without avx & 4.8   & 4.1      & 2.5    \\\hline
@@ -148,17 +148,11 @@ without avx & 4.8   & 4.1      & 2.5    \\\hline
 %}}}
 %{{{
 % テーブル1
-\begin{table}[t]
-\caption{静的配列の実行時間[ms]}
-\label{tb:1}
-\tbspace{0.3}	%セルの左右余白サイズ[cm]
-\begin{tabular}{l|r|r|r}
-\hline\hline
+\begin{ttable}{静的配列の実行時間[ms]}{example}{l|r|r|r}{0.3}
             & array & pointer  & scalar \\\hline
 with avx    & 4.0   & 3.2      & 2.5    \\
 without avx & 4.8   & 4.1      & 2.5    \\\hline
-\end{tabular}
-\end{table}
+\end{ttable}
 %}}}
 
 %----------------------------------------------
