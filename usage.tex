@@ -1,1 +1,213 @@
 % vim : set foldmethod=marker :
+%==============================================
+\section{スタイルファイルの利用方法}
+\label{sec:usage}
+%==============================================
+
+本スタイルファイルでは，
+main.texおよびbibfile.bibの2ファイルを編集して文書作成を行います．
+文章量が多い場合は，
+必要に応じて$\setminus$inputを用いたファイル分割を利用すると
+原稿を管理しやすくなります．
+
+本文章は，usage.texファイルに記載されています．
+main.texからは$\setminus$inputを利用して挿入されていますので，
+本文章を削除する際には，main.texの該当行をコメントアウトしてください．
+
+本スタイルファイルでは，Web検索などで見受けられる一般的なlatex構文を簡易化したコマンドを
+いくつか用意してあります．
+必要に応じて第\ref{sec:master}章のsubsectionを確認するようにお願いします．
+とはいえ，TeXによる文書作成に慣れている方は，本文を読み飛ばして
+角丸の囲み線の中に書かれたTeXコードのみ見てもらえれば十分かと思います．
+
+%----------------------------------------------
+\subsection{コンパイルするために必要な準備}
+%----------------------------------------------
+本スタイルファイルをそのままコンパイルするためには，
+styディレクトリ内にpenguin.bstとjlisting.styの2ファイルを用意する必要があります．
+2つのstyファイルは，元ファイルが再配布可能かどうか判断できなかったため，
+本スタイルファイルで非公開としています．
+(研究室メンバーにはすでに配布してありますので，それらのファイルをコピーしてください)
+
+jlisting.styはWeb公開されているスタイルファイルですので，
+ダウンロードサイトから入手することができます．
+一方，penguin.bstは情報処理学会のipsjunsrt.bstを改造したファイルを想定しています．
+penguin.bstがない場合は，別のbstファイルを利用してください．
+
+参考文献ファイルのbibfile.bibはpenguin.bstを想定した内容なので，
+penguin.bst以外のbstファイルを利用するとpbibtexコマンドでコンパイルエラーが出るかもしれません．
+その場合は，bibfile.bibの内のテキストをすべて削除すると
+(参考文献の引用は印字されませんが)コンパイルできるようになるはずです．
+
+%=============================================={{{
+\section{スタイルファイルの固有設定}
+\label{sec:master}
+%==============================================
+本スタイルファイルには簡易的なコマンドをいくつか用意してありますので，それらについて紹介します．
+
+%----------------------------------------------
+\subsection{数式}
+%----------------------------------------------
+数式の印字には様々な表記方法がありますが，
+なるべく$\setminus$begin$\{$align$\}$環境を利用しましょう．
+align環境は，equatoinのような多くの数式環境に対して上位互換となっています．
+\eqref{eq:1}に数式の例を示します．
+本スタイルファイルでは，
+$\setminus$eqrefコマンドを使ってlabelを参照しないと式番号が表示されません．
+式番号が表示されない！などと焦らないように気を付けてください．
+%
+\begin{align}
+	5 = 2 + 3
+	\label{eq:1}
+\end{align}
+%
+\begin{lstbox}{数式($5=2+3$)}
+\begin{minilst}
+\begin{align}
+	5 = 2 + 3
+	\label{eq:1}
+\end{align}
+\end{minilst}
+\end{lstbox}
+
+%----------------------------------------------
+\subsection{図}
+%----------------------------------------------
+eps以外の画像を貼り付けたい場合は，
+オプション引数($\[\]$括弧の部分)で拡張子を設定してください．
+もちろん，オプション引き数に「eps」を設定することも可能です．
+%
+\begin{lstbox}{図を貼るコマンド(epsファイル)}
+\begin{minilst}
+\fig{図を貼る}{happyou}{7}  %図3
+\doublefig{ウサギ}{usagi}{2}{0.5}{カエル}{kaeru}{3}  %図4図5
+\subfig{鳥獣戯画}{ウサギ}{usagi}{2}{0.5}{カエル}{kaeru}{3}%図6
+\end{minilst}
+\end{lstbox}
+%
+\begin{lstbox}{図を貼るコマンド(eps以外)}
+\begin{minilst}
+\fig[png]{図を貼る}{happyou}{7}  %図3
+\doublefig[jpg]{ウサギ}{usagi}{2}{0.5}{カエル}{kaeru}{3}  %図4図5
+\subfig[eps]{鳥獣戯画}{ウサギ}{usagi}{2}{0.5}{カエル}{kaeru}{3}%図6
+\end{minilst}
+\end{lstbox}
+
+
+%----------------------------------------------
+\subsection{表}
+%----------------------------------------------
+表を挿入する場合は，特にこだわりがない限りは
+独自定義したttable環境を利用してください．
+%{{{
+% テーブル環境
+\begin{lstbox}{\tabref{tb:1}のテーブルを表示するコマンド}
+\begin{minilst}
+\begin{table}[t]
+\caption{静的配列の実行時間[ms]}
+\label{tb:1}
+\tbspace{0.3}	%セルの左右余白サイズ[cm]
+\begin{tabular}{l|r|r|r}
+\hline\hline
+            & array & pointer  & scalar \\\hline
+with avx    & 4.0   & 3.2      & 2.5    \\
+without avx & 4.8   & 4.1      & 2.5    \\\hline
+\end{tabular}
+\end{table}
+\end{minilst}
+\end{lstbox}
+%}}}
+%{{{
+% テーブル環境(省略版)
+\begin{lstbox}{\tabref{tb:1}のテーブルを表示するコマンド(ttable環境利用)}
+\begin{minilst}
+\begin{ttable}{静的配列の実行時間[ms]}{tb:1}{0.3}{l|r|r|r}
+            & array & pointer  & scalar \\\hline
+with avx    & 4.0   & 3.2      & 2.5    \\
+without avx & 4.8   & 4.1      & 2.5    \\\hline
+\end{ttable}
+\end{minilst}
+\end{lstbox}
+%}}}
+%{{{
+% テーブル1
+\begin{table}[t]
+\caption{静的配列の実行時間[ms]}
+\label{tb:1}
+\tbspace{0.3}	%セルの左右余白サイズ[cm]
+\begin{tabular}{l|r|r|r}
+\hline\hline
+            & array & pointer  & scalar \\\hline
+with avx    & 4.0   & 3.2      & 2.5    \\
+without avx & 4.8   & 4.1      & 2.5    \\\hline
+\end{tabular}
+\end{table}
+%}}}
+
+%----------------------------------------------
+\subsection{ソースコード}
+%----------------------------------------------
+ソースコードの表示にはlstlisting環境を用いることができます．
+lstlisting環境内であれば，
+コメントアウトされた部分もそのまま反映できますので，
+C言語コードをコピペするだけで問題なく表示できるはずです．
+ただし，スタイルファイル内で「折り返し」を設定してあるので，
+「//」を利用した長文コメントには多少の編集が必要となります．
+
+実行コマンドのように，図番号を付けるほどでもない内容には，
+lstbox環境とminlist環境を利用した記述を使ってください．．
+%{{{
+%図番号のあるソースコードの記述方法
+\begin{lstbox}{図番号のあるソースコードの記述方法}
+\begin{minilst}
+\begin{figure}[t] %横にぶち抜きの図を作るときは{figure*}にする
+\begin{lstlisting｝
+__global__ void function(double *A, double *B, double *D, int size)
+{
+	<略>
+}	
+\end{lstlisting｝
+\caption{プログラム例}
+\label{fig:1}
+\end{figure} %横にぶち抜きの図を作るときは{figure*}にする
+\end{minilst}
+\end{lstbox}
+%}}}
+%{{{
+%簡易プログラム
+\begin{lstbox}{簡易プログラム}
+\begin{minilst}
+\begin{lstbox}{コードのタイトルを書く}
+\begin{minilst｝
+	<ここに実行コード>
+\end{minilst｝
+\end{lstbox}
+\end{minilst}
+\end{lstbox}
+%}}}
+
+%----------------------------------------------
+\subsection{引用}
+\label{sec:ref}
+%----------------------------------------------
+表の参照には$\setminus$tabref，
+図の参照には$\setminus$figref，式の参照には$\setminus$eqrefを用いて記述します．
+参考文献は，文献\Cite{test2}のように名詞として引用する場合は$\setminus$Cite，
+文節や文全体の内容が引用である場合は$\setminus$citeを利用してください
+\cite{test1}\cite{test3}．
+
+\begin{lstbox}{参照コマンド}
+\begin{minilst}
+\figref{fig:penguin}は図の参照である．
+\tabref{tb:penguin}は表の参照である．
+\eqref{eq:penguin}は式の参照である．
+文献\Cite{penguin}は参考文献を参照する\cite{penguin}．
+\end{minilst}
+\end{lstbox}
+
+本フォーマットでは，図表の参照箇所を強調するために，
+初めて参照される図表番号を太字で表示します．
+強調するのは初回のみなので，2回目以降の参照箇所は太字になりません．
+また，引用のない数式には式番号が表示されないように設定してあります．
+
+%}}}
