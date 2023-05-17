@@ -13,23 +13,29 @@
 \usepackage{url}    	% URLのアンダーバー表示(参考文献で利用)
 %\usepackage{layout}	% レイアウト表示 
 \usepackage[fleqn]{mathtools}	% 数式用
-\usepackage{graphicx}	% 画像ファイル用
+\usepackage[dvipdfmx]{graphicx}	% 画像ファイル用
+\usepackage[dvipdfmx]{color} 	% PNG画像表示/文字彩色
 \usepackage{enumitem}	% 箇条書きのフォーマットを編集できる
 \usepackage{listings}	%ソースコード貼付
 \usepackage{sty/jlisting} %listingsの日本語拡張
 \usepackage{multirow}	% 表のセル連結
-\usepackage{color}	% 文字に彩色
 \usepackage{ascmac}	% タイトル付き囲み線
 %-----------------------------------------------------------
 
 % オプションフラグの変数宣言
 \newif\if@zemi\@zemifalse
+\newif\if@meirio\@meiriofalse
+
 
 % ゼミ用TeX設定
 \DeclareOption{zemi}{%
 	\@twocolumntrue		% 2段組
 	\@zemitrue
 }
+
+% フォント変更
+\DeclareOption{meirio}{\@meiriotrue}
+
 
 \ProcessOptions\relax % クラスファイルのオプション実行
 
@@ -269,7 +275,13 @@
 % bibtexスタイルファイル
 \bibliographystyle{sty/penguin} 
 
+%-----------------------------------------------------------											
+% 色の定義
+%-----------------------------------------------------------
+\definecolor{ppink}{rgb}{0.85, 0.20, 0.247} %紅赤
+\definecolor{pgreen}{rgb}{0.44, 0.68, 0.24} %鶸萌黄色(ひわもえぎ)
 
+											
 %-----------------------------------------------------------
 % 図番号のない囲み
 %-----------------------------------------------------------
