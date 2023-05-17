@@ -185,6 +185,20 @@ C言語コードをコピペするだけで問題なく表示できるはずで�
 
 実行コマンドのように，図番号を付けるほどでもない内容には，
 lstbox環境とminlist環境を利用した記述を使ってください．．
+%
+%{{{
+\begin{figure}[ht] 
+\begin{lstlisting}
+__global__ void function(double *A, int size)
+{
+	//引数を使わない不届きなプログラム 
+	printf("Hello World!\n");	/* コメント */
+}
+\end{lstlisting}
+\caption{プログラム例}
+\label{fig:hello}
+\end{figure} 
+%}}}
 %{{{
 \begin{lstbox}{\figref{fig:hello}のソースコードを表示するためのTeX記法}
 \begin{minilst}
@@ -201,19 +215,6 @@ __global__ void function(double *A, int size)
 \end{figure} %横にぶち抜きの図を作るときは{figure*}にする
 \end{minilst}
 \end{lstbox}
-%}}}
-%{{{
-\begin{figure}[ht] 
-\begin{lstlisting}
-__global__ void function(double *A, int size)
-{
-	//引数を使わない不届きなプログラム 
-	printf("Hello World!\n");	/* コメント */
-}
-\end{lstlisting}
-\caption{プログラム例}
-\label{fig:hello}
-\end{figure} 
 %}}}
 %{{{
 \begin{lstbox}{図番号のない簡易プログラム}
