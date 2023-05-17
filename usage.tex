@@ -186,15 +186,16 @@ C言語コードをコピペするだけで問題なく表示できるはずで�
 実行コマンドのように，図番号を付けるほどでもない内容には，
 lstbox環境とminlist環境を利用した記述を使ってください．．
 %{{{
-\begin{lstbox}{図番号付きでソースコードを表示するTeX記法}
+\begin{lstbox}{\figref{fig:hello}のソースコードを表示するためのTeX記法}
 \begin{minilst}
 \begin{figure}[ht] %横にぶち抜きの図を作るときは{figure*}にする
-\begin{lstlisting｝
+\begin{lstlisting}
 __global__ void function(double *A, int size)
 {
-	printf("Hello World!\n");
+	//引数を使わない不届きなプログラム
+	printf("Hello World!\n");	/* コメント */
 }	
-\end{lstlisting｝
+\end{lstlisting}
 \caption{プログラム例}
 \label{fig:hello}
 \end{figure} %横にぶち抜きの図を作るときは{figure*}にする
@@ -203,21 +204,22 @@ __global__ void function(double *A, int size)
 %}}}
 %{{{
 \begin{figure}[ht] 
-\begin{lstlisting｝
+\begin{lstlisting}
 __global__ void function(double *A, int size)
 {
-	printf("Hello World!\n");
-}	
-\end{lstlisting｝
+	//引数を使わない不届きなプログラム 
+	printf("Hello World!\n");	/* コメント */
+}
+\end{lstlisting}
 \caption{プログラム例}
 \label{fig:hello}
-\end{figure} %横にぶち抜きの図を作るときは{figure*}にする
+\end{figure} 
 %}}}
 %{{{
 \begin{lstbox}{図番号のない簡易プログラム}
 \begin{minilst}
 \begin{lstbox}{コードのタイトルを書く}
-\begin{minilst｝
+\begin{minilst}
 	<ここにソースコード>
 \end{minilst｝
 \end{lstbox}
