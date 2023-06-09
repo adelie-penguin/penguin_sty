@@ -136,6 +136,9 @@
 	\tabcolsep=#1cm	%左右余白
 }
 
+%図を保存するディレクトリを登録
+\graphicspath{{./figure/}}
+
 %箇条書きの行間
 \setlist{itemsep=0pt, parsep=0pt}
 
@@ -338,7 +341,7 @@
 \newcommand{\fig}[4][eps]{
 \begin{figure}[th]
 \centering
-\includegraphics[width=#4cm,clip]{./figure/#3.#1}	  %画像ファイルを保存したディレクトリを指定
+\includegraphics[width=#4cm,clip]{#3.#1}	  %画像ファイルを保存したディレクトリを指定
 \caption{#2}
 \label{fig:#3}  
 \end{figure}
@@ -350,7 +353,7 @@
 %-[1枚目]------------------
 \begin{minipage}[b]{0.45\hsize}
 \centering
-\includegraphics[width=#4cm,clip]{./figure/#3.#1}
+\includegraphics[width=#4cm,clip]{#3.#1}
 \caption{#2}
 \label{fig:#3}
 \end{minipage}
@@ -358,7 +361,7 @@
 \hspace*{#5cm}
 \begin{minipage}[b]{0.45\hsize}
 \centering
-\includegraphics[width=#8cm,clip]{./figure/#7.#1}	
+\includegraphics[width=#8cm,clip]{#7.#1}	
 \caption{#6}
 \label{fig:#7}
 \end{minipage}
@@ -374,14 +377,14 @@
 %-[1枚目]------------------
 \begin{minipage}[b]{0.45\hsize}
 \centering
-\includegraphics[width=#5cm,clip]{./figure/#4.#1}
+\includegraphics[width=#5cm,clip]{#4.#1}
 \subcaption{#3}
 \end{minipage}
 %-[2枚目]------------------
 \hspace*{#6cm}
 \begin{minipage}[b]{0.45\hsize}
 \centering
-\includegraphics[width=#9cm,clip]{./figure/#8.#1}	
+\includegraphics[width=#9cm,clip]{#8.#1}	
 \subcaption{#7}
 \end{minipage}
 %--------------------------
