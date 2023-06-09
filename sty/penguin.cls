@@ -156,6 +156,7 @@
 \renewcommand\@maketitle{
 	\begin{center}
 	\fs@title{\bfseries\sffamily\@title\\}
+	\vspace{0.5em}
 	\fs@author{\@author\\}
 	\end{center}
 	\vspace{1em}
