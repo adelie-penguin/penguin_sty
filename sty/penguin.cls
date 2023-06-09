@@ -90,7 +90,7 @@
 \renewcommand{\tiny}{\@setfontsize\tiny{5pt}{6pt}}
 \renewcommand{\large}{\@setfontsize\large{10pt}{14pt}}
 \renewcommand{\Large}{\@setfontsize\Large{14pt}{16pt}}
-
+\fi
 
 \let\fs@caption\footnotesize
 \let\fs@subcaption\scriptsize
@@ -101,7 +101,7 @@
 \let\fs@title\Large
 \let\fs@author\normalsize
 \let\fs@section\large
-\fi
+
 
 
 %-----------------------------------------------------------
