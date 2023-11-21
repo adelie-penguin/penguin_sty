@@ -15,10 +15,9 @@ makeコマンドを実行するとmain.pdfを生成します．
 
 <br><br><br>
 同梱できなかったファイルの元ネタも提示しておきます．
-
 身内に配布したファイルは改造版でしたが，リネームするだけでも問題ないかと思います．
 
 |ファイル名|配布元|改造|
 |----------|------|:----:|
 |sty/penguin.bst |情報処理学会のテンプレート(ipsjunsrt.bst)|フィールドを追加|
-|sty/jlisting.sty|http://teacher.nagano-nct.ac.jp/fujita/LightNEasy.php?page=report|無|
+|sty/jlisting.sty|http://teacher.nagano-nct.ac.jp/fujita/files/jlisting.sty|無|
