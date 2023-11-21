@@ -15,12 +15,10 @@ makeコマンドを実行するとmain.pdfを生成します．
 
 <br><br><br>
 同梱できなかったファイルの元ネタも提示しておきます．
-身内には下記ファイルの改造版を配布してありますが，リネームするだけでも問題ないかと思います．
 
-|ファイル名|配布元|
-|----------|------|
-|sty/penguin.bst |情報処理学会のテンプレート(ipsjunsrt.bst)|
-|sty/jlisting.sty|http://teacher.nagano-nct.ac.jp/fujita/LightNEasy.php?page=report|
+身内に配布したファイルは改造版でしたが，リネームするだけでも問題ないかと思います．
 
-> [!WARNING]
-> 身内に配布したbstファイルは，bibtexで利用可能なフィールドの種類をipsjunsrt.bstから追加してあります．
+|ファイル名|配布元|改造|
+|----------|------|:----:|
+|sty/penguin.bst |情報処理学会のテンプレート(ipsjunsrt.bst)|フィールドを追加|
+|sty/jlisting.sty|http://teacher.nagano-nct.ac.jp/fujita/LightNEasy.php?page=report|無|
