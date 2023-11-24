@@ -3,7 +3,7 @@
 %	  ぺんぎん すたいるふぁいる ver.2023 
 %***********************************************************
 
-\LoadClass[a4j,twocolumn,twoside]{jarticle}
+\LoadClass[a4j,twoside]{jarticle}
 \typeout{>> ぺんぎん すたいるふぁいる ver.2023}
 
 \usepackage{geometry}	% 余白楽々設定
@@ -11,7 +11,6 @@
 \usepackage{fancyhdr}	% ヘッダーの設定
 \usepackage{lastpage}	% 最終ページ番号の表示
 \usepackage{url}    	% URLのアンダーバー表示(参考文献で利用)
-%\usepackage{layout}	% レイアウト表示 
 \usepackage[fleqn]{mathtools}	% 数式用
 \usepackage[dvipdfmx]{graphicx}	% 画像ファイル用
 \usepackage[dvipdfmx]{color} 	% PNG画像表示/文字彩色
@@ -20,11 +19,12 @@
 \usepackage{sty/jlisting} %listingsの日本語拡張
 \usepackage{multirow}	% 表のセル連結
 \usepackage{ascmac}	% タイトル付き囲み線
+%\usepackage{layout}	% レイアウト表示 
 %-----------------------------------------------------------
 
 % オプションフラグの変数宣言
 \newif\if@zemi\@zemifalse
-\newif\if@meirio\@meiriofalse
+\newif\if@meiryo\@meiryofalse
 
 
 % ゼミ用TeX設定
@@ -34,7 +34,7 @@
 }
 
 % フォント変更
-\DeclareOption{meirio}{\@meiriotrue}
+\DeclareOption{meiryo}{\@meiryotrue}
 
 
 \ProcessOptions\relax % クラスファイルのオプション実行
@@ -155,9 +155,9 @@
 %タイトル部分には日付を入れない
 \renewcommand\@maketitle{
 	\begin{center}
-	\fs@title{\bfseries\sffamily\@title\\}
+	\fs@title{\bfseries\sffamily\@title\leavevmode\\}
 	\vspace{0.5em}
-	\fs@author{\@author\\}
+	\fs@author{\@author\leavevmode\\}
 	\end{center}
 	\vspace{1em}
 }
@@ -212,9 +212,15 @@
 \titleformat{\section}[block]{\bfseries\fs@section}{\textbf{\thesection.}}{0.5em}{}
 \titleformat{\subsection}[block]{\bfseries\normalsize}{\textbf{\thesubsection.}}{0.5em}{}
 \titleformat{\subsubsection}[block]{\bfseries\normalsize}{\textbf{\thesubsubsection.}}{0.5em}{}
+\if@zemi
 \titlespacing{\section}{0em}{0.5em}{0em}		%sectionタイトルの左・上・下の余白
 \titlespacing{\subsection}{0em}{0em}{0em}	
 \titlespacing{\subsubsection}{0em}{0em}{0em}
+\else	
+\titlespacing{\section}{0em}{1.0em}{0em}		%sectionタイトルの左・上・下の余白
+\titlespacing{\subsection}{0em}{0.5em}{0em}	
+\titlespacing{\subsubsection}{0em}{0.5em}{0em}
+\fi
 
 %-----------------------------------------------------------
 % ソースコードの表示設定
@@ -312,8 +318,10 @@
 % color.styの短縮コマンド
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\white}[1]{\textcolor{white}{#1}}
 %\renewcommand{\red}[1]{#1}		% コメントアウトを外すと彩色を中止する
 %\renewcommand{\blue}[1]{#1}	% コメントアウトを外すと彩色を中止する
+%\renewcommand{\white}[1]{#1}	% コメントアウトを外すと彩色を中止する
 
 %----------------------------------------------------------
 %図の貼り付け(ショートカットコマンド)
