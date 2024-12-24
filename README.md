@@ -20,10 +20,14 @@ git clone --depth=1 https://github.com/adelie-penguin/penguin_sty/
 ```
 
 <br><br><br>
-同梱できなかったファイルの元ネタも提示しておきます．  
+同梱できなかったファイルの元ネタを提示しておきます．  
 身内に配布したのは改造版ですが，リネームするだけでも問題ないかと思います．
 
 |ファイル名|配布元|改造|
 |----------|------|:----:|
 |sty/penguin.bst |情報処理学会のテンプレート(ipsjunsrt.bst)|フィールドを追加|
 |sty/jlisting.sty|http://teacher.nagano-nct.ac.jp/fujita/files/jlisting.sty|無|
+
+<br><br><br>
+便利なWebページ
+- [テーブル作成](https://www.tablesgenerator.com/latex_tables)
