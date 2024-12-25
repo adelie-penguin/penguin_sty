@@ -27,8 +27,11 @@ DVIPDFM=dvipdfmx
 SRC 		= $(MAIN).tex $(REF).bib 
 DELFILE = $(MAIN).aux $(MAIN).blg $(MAIN).dvi $(MAIN).log
 TEXOPT1	= -interaction=nonstopmode
-TEXOPT23= -interaction=batchmode 
-BIB0LINE = 3
+TEXOPT23= -interaction=batchmode
+BIB0LINE= 3
+
+#TEXOPT23 += -kanji=utf8 -no-guess-input-enc 
+#TEXOPT1   = $(TEXOPT23)
 
 #------------------------------------------------------
 
