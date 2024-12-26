@@ -10,24 +10,26 @@ main.texをコンパイルするためには下記のファイルを追加で用
 - main.tex
 - bibfile.bib
 
-`make`コマンドを実行するとmain.pdfを生成します．
-独自定義のコマンドの使い方はmain.pdfを参照してください．
+`make`コマンドを実行するとmain.pdfを生成します．  
+独自定義コマンドの使い方はmain.pdfを参照してください．
 
-<br><br><br>
-ダウンロードコマンド
+## ダウンロード
+`--depth=1`オプションを入れて更新履歴を省くのがおすすめ．
 ```
 git clone --depth=1 https://github.com/adelie-penguin/penguin_sty/
 ```
 
-<br><br><br>
+## 追加で必要なファイル
+
 同梱できなかったファイルの元ネタを提示しておきます．  
-身内に配布したのは改造版ですが，リネームするだけでも問題ないかと思います．
+身内に配布したのは改造版ですが，改造前のファイルをリネームするだけでも問題ないかと思います．
 
 |ファイル名|配布元|改造|
 |----------|------|:----:|
 |sty/penguin.bst |情報処理学会のテンプレート(ipsjunsrt.bst)|フィールドを追加|
 |sty/jlisting.sty|http://teacher.nagano-nct.ac.jp/fujita/files/jlisting.sty|無|
 
-<br><br><br>
-便利なWebページ
-- [テーブル作成](https://www.tablesgenerator.com/latex_tables)
+## 便利なWebページ
+
+- [テーブル作成支援](https://www.tablesgenerator.com/latex_tables)
+- [いろんなパッケージと使い方の紹介](http://xyoshiki.web.fc2.com/texindex.html)
